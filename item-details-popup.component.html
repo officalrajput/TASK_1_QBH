@@ -1,0 +1,134 @@
+<div class="modal" *ngIf="isOpen">
+  <div class="modal-content">
+
+    <h2>Item Description</h2>
+    <form [formGroup]="itemForm" (ngSubmit)="saveItemDetails()">
+      <div class="form-container">
+
+        <!-- Item Short/Generic Name -->
+        <div>
+          <label>Item Short/Generic Name</label>
+          <input type="text" formControlName="itemShortGenericName">
+        </div>
+
+        <!-- Item Class -->
+        <div>
+          <label>Item Class</label>
+          <input type="text" formControlName="itemClass">
+        </div>
+
+        <div>
+          <label>Item Category</label>
+          <input type="text" formControlName="itemCategory" value="General" readonly />
+        </div>
+         <!-- Item Group -->
+         <div>
+          <label>Item Group</label>
+          <select formControlName="itemGroup">
+            <option value="Sales">Sales</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+          <!-- Item Manufacture -->
+          <div>
+            <label>Item Manufacture</label>
+            <input type="text" formControlName="itemManufacture">
+          </div>
+
+          <!-- Item Length -->
+        <div>
+          <label>Item Length</label>
+          <input type="fixed" formControlName="itemLength">
+        </div>
+
+
+
+
+
+        <!-- Item Part No. -->
+        <div>
+          <label>Item Part No.</label>
+          <input type="text" formControlName="itemPartNo">
+        </div>
+
+
+
+        <!-- Item Brand -->
+        <div>
+          <label>Item Brand</label>
+          <input type="text" formControlName="itemBrand">
+        </div>
+
+        <!-- Item Category -->
+
+
+
+
+
+
+        <!-- Item Width -->
+        <div>
+          <label>Item Width</label>
+          <input type="number" formControlName="itemWidth">
+        </div>
+
+        <!-- Item Height -->
+        <div>
+          <label>Item Height</label>
+          <input type="number" formControlName="itemHeight">
+        </div>
+
+        <!-- Item Thickness -->
+        <div>
+          <label>Item Thickness</label>
+          <input type="number" formControlName="itemThickness">
+        </div>
+
+        <!-- Item Color -->
+        <div>
+          <label>Item Color</label>
+          <input type="text" formControlName="itemColor">
+        </div>
+
+        <!-- Net Weight/Unit -->
+        <div>
+          <label>Net Weight/Unit</label>
+          <input type="number" formControlName="netWeightUnit">
+        </div>
+
+        <!-- Net Weight UOM -->
+        <div>
+          <label>Net Weight UOM</label>
+          <input type="text" formControlName="netWeightUOM">
+        </div>
+
+        <!-- Gross Weight/Unit -->
+        <div>
+          <label>Gross Weight/Unit</label>
+          <input type="number" formControlName="grossWeightUnit">
+        </div>
+
+        <!-- Gross Weight UOM -->
+        <div>
+          <label>Gross Weight UOM</label>
+          <input type="text" formControlName="grossWeightUOM">
+        </div>
+
+        <!-- Detailed Description -->
+        <div class="full-width">
+          <label>Detailed Description</label>
+          <textarea formControlName="detailedDescription"></textarea>
+        </div>
+
+      </div>
+
+      <!-- Modal Actions (Save and Clear) -->
+      <div class="modal-actions">
+        <button class="close-btn" (click)="close()">Close</button>
+        <button type="button" (click)="clearItemDetails()">Clear</button>
+        <button type="submit" [disabled]="itemForm.invalid">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
